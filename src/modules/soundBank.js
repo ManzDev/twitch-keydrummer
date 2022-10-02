@@ -1,4 +1,4 @@
-export const MODES = ["TypeDrummer", "VoiceDrummer", "RetroDrummer"];
+export const MODES = ["TypeDrummer", "RetroDrummer", "VoiceDrummer", "PhilDrummer"];
 
 export const soundBank = new Map([
   ["a", { file: "/a.mp3" }],
@@ -34,7 +34,8 @@ MODES.forEach(mode => {
   const keys = [...soundBank].map(item => item[0]);
 
   keys.forEach(key => {
-    new Audio(`/${folder}/${key}.mp3`);
+    const audio = new Audio(`/${folder}/${key}.mp3`); // Brute-force preloading
+
     // Preload assets (Google-unsupported)
     /*
     const linkTag = `<link rel="preload" href="/${folder}/${key}.mp3" as="audio">`;

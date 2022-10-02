@@ -29,6 +29,12 @@ body {
   --dark-color: #133770;
 }
 
+.container.phildrummer {
+  --color: #0d650a;
+  --shine-color: #12a51a;
+  --dark-color: #0a5306;
+}
+
 .soundbox {
   border: 6px solid var(--color);
   width: 525px;
@@ -38,6 +44,27 @@ body {
   font-family: "Abyssinica SIL", sans-serif;
   font-size: 48px;
   padding: 10px 20px;
+}
+
+p {
+  font-family: "Abyssinica SIL", sans-serif;
+  font-weight: lighter;
+  font-size: 18px;
+  color: #ccc;
+  margin: 5px 0 0;
+  text-align: center;
+}
+
+p + p {
+  opacity: 0.5;
+}
+
+p a {
+  color: #38ace2;
+}
+
+p a:hover {
+  color: #e45b5b;
 }
 
 .top {
@@ -63,7 +90,7 @@ body {
   transition: transform 0.25s;
 }
 
-.logo:hover {
+img.logo:hover {
   filter: drop-shadow(0 0 10px cyan);
   transition: none;
   cursor: pointer;
@@ -72,6 +99,34 @@ body {
 .logo.beat {
   transform: scale(1.25);
   transition: none;
+}
+
+.logo.jump {
+  transform: translateY(-20px);
+}
+
+.logo.right {
+  transform: translateX(20px);
+}
+
+.logo.left {
+  transform: translateX(-20px);
+}
+
+.logo.rave {
+  filter: invert(90%);
+}
+
+.logo.spin {
+  transform: rotate(90deg);
+}
+
+.logo.antispin {
+  transform: rotate(-90deg);
+}
+
+.logo.random {
+  filter: sepia(200%) brightness(200%) hue-rotate(200deg);
 }
 
 .container {

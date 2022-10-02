@@ -1,13 +1,17 @@
 import { soundBank, MODES } from "./modules/soundBank.js";
 
+// Constants
 const TIME_PER_LETTER = 240;
 
-let timer;
-let currentFolder = 0;
+// DOM elements
 const container = document.querySelector(".container");
 const soundBox = document.querySelector(".soundbox");
 const logo = document.querySelector(".logo");
 const textLogo = document.querySelector(".text-logo");
+
+// Control vars
+let currentFolder = 0;
+let timer;
 
 const getSoundBoxText = () => Array.from(soundBox.value.toLowerCase());
 const getSoundBoxSize = () => soundBox.value.length;
@@ -23,7 +27,15 @@ const playNote = (letter) => {
   if (soundBank.has(letter)) {
     const sound = new Audio(folder + soundBank.get(letter).file);
     sound.play();
+
     letter === "o" && addEffect(logo, "beat");
+    letter === "f" && addEffect(logo, "jump");
+    letter === "k" && addEffect(logo, "right");
+    letter === "i" && addEffect(logo, "left");
+    letter === "w" && addEffect(logo, "rave");
+    letter === "n" && addEffect(logo, "spin");
+    letter === "l" && addEffect(logo, "antispin");
+    letter === "r" && addEffect(logo, "random");
   }
 };
 
