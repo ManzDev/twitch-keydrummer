@@ -8,6 +8,7 @@ const container = document.querySelector(".container");
 const soundBox = document.querySelector(".soundbox");
 const logo = document.querySelector(".logo");
 const textLogo = document.querySelector(".text-logo");
+const volume = document.querySelector(".volume input");
 
 // Control vars
 let currentFolder = 0;
@@ -26,6 +27,7 @@ const playNote = (letter) => {
 
   if (soundBank.has(letter)) {
     const sound = new Audio(folder + soundBank.get(letter).file);
+    sound.volume = volume.value;
     sound.play();
 
     letter === "o" && addEffect(logo, "beat");
@@ -42,14 +44,18 @@ const playNote = (letter) => {
 const play = () => {
   clearTimeout(timer);
 
-  const letters = getSoundBoxText();
-  const size = getSoundBoxSize();
+  const text = getSoundBoxText();
+  playText(text);
+
+  timer = setTimeout(() => play(), TIME_PER_LETTER * text.length);
+};
+
+const playText = (text) => {
+  const letters = Array.from(text);
 
   letters.forEach((letter, index) => {
     setTimeout(() => playNote(letter), TIME_PER_LETTER * (index + 1));
   });
-
-  timer = setTimeout(() => play(), TIME_PER_LETTER * size);
 };
 
 logo.addEventListener("click", () => {

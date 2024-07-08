@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="./index.css">
   <script type="module" src="./index.js"></script>
 </head>
+
 <body>
 
   <div class="container typedrummer">
@@ -16,9 +18,15 @@
       <div class="text-logo">TypeDrummer</div>
     </div>
     <textarea class="soundbox" placeholder="Escribe letras aquí..." spellcheck="false"></textarea>
-    <p>Hecho en directo en <a href="https://twitch.tv/ManzDev">Twitch</a> por <a href="https://manz.dev/">ManzDev</a></p>
+    <p>Hecho en directo en <a href="https://twitch.tv/ManzDev">Twitch</a> por <a href="https://manz.dev/">ManzDev</a>
+    </p>
     <p>( Inspirado en la idea de <a href="http://typedrummer.com/">TypeDrummer</a> )</p>
+    <div class="volume">
+      Volume:
+      <input type="range" min="0" max="1" value="0.7" step="0.1">
+    </div>
   </div>
 
 </body>
+
 </html>

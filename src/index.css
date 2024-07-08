@@ -133,3 +133,12 @@ img.logo:hover {
   width: 600px;
   margin: 8em auto;
 }
+
+.volume {
+  width: 150px;
+  font-family: "Abyssinica SIL", sans-serif;
+  font-size: 0.8rem;
+  margin: 1rem auto;
+  color: #fff;
+  text-align: center;
+}
